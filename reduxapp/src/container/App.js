@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Display from '../components/displayComponent';
 
+
 class App extends Component {
 
     componentDidMount() {
@@ -14,7 +15,7 @@ class App extends Component {
         return(
             <div>
                 <h1>Redux</h1>
-                <Display datalist={this.props.mydata}></Display>
+                <Display datalist={this.props.mydata} />
 
             </div>
         )
