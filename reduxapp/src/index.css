@@ -22,11 +22,18 @@ h1, h2 {
   width: 18rem;
 } */
 
-img {
+img.card {
   height: 200px;
   width: 200px;
 }
 .card {
   display:inline-block;
   justify-content: space-evenly;
+}
+
+.card:hover{
+  background-image: linear-gradient(180deg,transparent,#1b2530),linear-gradient(90deg,#0d648c,#2d274f);
+  color:white;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
