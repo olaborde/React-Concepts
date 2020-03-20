@@ -8,16 +8,25 @@ class Home extends Component{
         super();
 
         this.state={
-            news:JSON
+            news:JSON,
+            filtered:JSON
         }
+    }
+
+    filterNews(keyword){
+        const output = this.state.news.filter((data)=>{
+            return data.title.toLowerCase().indexOf(keyword.toLowerCase())>-1 || 
+            data.feed.toLowerCase().indexOf(keyword.toLowerCase())>-1
+        })
+        this.setState({filtered:output})
     }
 
     render(){
        
         return(
             <Fragment>
-                <Header />
-                <Newsfeed datalist={this.state.news} />
+                <Header userText={(userInput)=>{this.filterNews(userInput)}}/>
+                <Newsfeed datalist={this.state.filtered} />
 
             </Fragment>
         )
